@@ -317,9 +317,6 @@ self.addEventListener("fetch", (event) => {
   const { handler } = (await import("./dist/server/entry.mjs")) as {
     handler: (req: unknown, res: unknown, next?: () => void) => void;
   };
-  const { handler } = (await import("./dist/server/entry.mjs")) as {
-    handler: (req: unknown, res: unknown, next?: () => void) => void;
-  };
   await app
     .register(fastifyStatic, {
       root: path.join(import.meta.dirname, "dist", "client"),
